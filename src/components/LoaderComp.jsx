@@ -2,7 +2,7 @@ import React from 'react'
 
 const LoaderComp = () => {
   return (
-    <div className='loading-comp'>Loading...</div>
+    <div className='spinner'></div>
   )
 }
 

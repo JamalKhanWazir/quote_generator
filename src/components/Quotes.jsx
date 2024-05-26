@@ -13,7 +13,7 @@ const Quotes = () => {
   //   Fetching data from api/index file
   const fetchQuoteData = async () => {
     if (!category) {
-      alert("Enter a word first!!!");
+      alert("Enter a word first !!!");
     } else {
       try {
         const apiData = await fetchData(category);
@@ -50,11 +50,11 @@ const Quotes = () => {
       <h1>Quote Generator!</h1>
       <br />
       <p>
-        Write A single word & Click{" "}
+        Pick a single word from below & Click {" "}
         <strong style={{ color: "yellow", fontStyle: "italic" }}>
           Get Quote
         </strong>{" "}
-        button to get a Quote about that word
+        button your Quote will be generated.
       </p>
 
       <div className="input-button">
@@ -71,7 +71,9 @@ const Quotes = () => {
 
       {/* If loading is true then Loader Component will render if not then the other */}
       {loading ? (
-        <LoaderComp />
+        <div style={{ margin: "1rem auto",  }}>
+          <LoaderComp />
+        </div>
       ) : (
         <div className="quote-div">
           {error && <p>Error: {error}</p>}
@@ -79,11 +81,12 @@ const Quotes = () => {
             {data.map((item, index) => (
               <div key={index}>
                 <p>
-                  <strong style={{color: "wheat"}}>Quote: </strong>
+                  <strong style={{ color: "wheat" }}>Quote: </strong>
                   {item.quote}
                 </p>
-                <p style={{color: "yellow"}}>
-                  Author: <strong style={{ color: "yellowgreen", fontStyle: "italic" }}>
+                <p style={{ color: "yellow" }}>
+                  Author:{" "}
+                  <strong style={{ color: "yellowgreen", fontStyle: "italic" }}>
                     {item.author}
                   </strong>
                 </p>
